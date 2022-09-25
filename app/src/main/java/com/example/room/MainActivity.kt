@@ -38,34 +38,34 @@ class MainActivity : AppCompatActivity() {
 
 
 
-//        btnGrabar!!.setOnClickListener(View.OnClickListener {
-//            val usuario = Usuarios(txtNom!!.text.toString(),txtCorreo!!.text.toString(),txtPas!!.text.toString())
-//            if (dao != null) {
-//                dao.insert(usuario)
-//            }
-//            txtNom!!.setText(null)
-//            txtCorreo!!.setText(null)
-//            txtPas!!.setText(null)
-//        })
+        btnGrabar!!.setOnClickListener(View.OnClickListener {
+            val usuario = Usuarios(txtNom!!.text.toString(),txtCorreo!!.text.toString(),txtPas!!.text.toString())
+            if (dao != null) {
+                dao.insert(usuario)
+            }
+            txtNom!!.setText(null)
+            txtCorreo!!.setText(null)
+            txtPas!!.setText(null)
+        })
 
 
-//        btnListar!!.setOnClickListener(View.OnClickListener {
-//            val lista = dao!!.listaUsuarios()
-//            val can = lista!!.size
-//            txtRes!!.setText("Cantidad de Registros: $can\n")
-//            for (i in lista!!.indices) {
-//                val u = lista!![i]
-//                txtRes!!.append(
-//                    """
-//
-//                    Codigo: ${u!!.id}
-//                    Nombre: ${u!!.nombre}
-//                    Correo: ${u!!.correo}
-//                    Password: ${u!!.pass}
-//
-//                    """.trimIndent()
-//                )
-//            }
-//        })
+        btnListar!!.setOnClickListener(View.OnClickListener {
+            lista = dao!!.listaUsuarios() as List<Usuarios>?
+            val can = lista!!.size
+            txtRes!!.setText("Cantidad de Registros: $can\n")
+            for (i in lista!!.indices) {
+                val u = lista!![i]
+                txtRes!!.append(
+                    """
+
+                    Codigo: ${u!!.id}
+                    Nombre: ${u!!.nombre}
+                    Correo: ${u!!.correo}
+                    Password: ${u!!.pass}
+
+                    """.trimIndent()
+                )
+            }
+        })
     }
 }
